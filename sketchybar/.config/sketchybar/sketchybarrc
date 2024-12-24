@@ -1,0 +1,59 @@
+#!/bin/bash
+
+source $HOME/.config/sketchybar/colors.sh
+source $HOME/.config/sketchybar/icons.sh
+
+PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
+ITEM_DIR="$HOME/.config/sketchybar/items"
+
+export FONT="Hack Nerd Font"
+
+# Setting up the general bar appearance of the bar
+bar=(
+    height=30
+    color=$BLACK
+    shadow=on
+    corner_radius=8
+    position=top
+    padding_right=10
+    padding_left=10
+    y_offset=3
+    margin=12
+    blur_radius=50
+)
+
+sketchybar --bar "${bar[@]}"
+
+# Setting up default values
+defaults=(
+    updates=when_shown
+    drawing=on
+    icon.font="$FONT:Regular:14.0"
+    icon.color=$RED
+    label.font="$FONT:Light:14.0"
+    label.color=$WHITE
+    label.padding_left=4
+    label.padding_right=4
+    icon.padding_left=4
+    icon.padding_right=4
+)
+
+
+sketchybar --default "${defaults[@]}"
+
+# left
+source $ITEM_DIR/apple.sh
+source $ITEM_DIR/aerospace.sh
+source $ITEM_DIR/window_title.sh
+
+# right
+source $ITEM_DIR/clock.sh
+source $ITEM_DIR/cpu.sh
+source $ITEM_DIR/battery.sh
+source $ITEM_DIR/wifi.sh
+
+sketchybar --hotload on
+
+sketchybar --update
+
+echo "sketchybar configuration loaded.."

@@ -41,6 +41,7 @@ cmd-f = 'fullscreen'
 
 cmd-shift-q = 'close'
 
+cmd-0 = 'workspace 0'
 cmd-1 = 'workspace 1'
 cmd-2 = 'workspace 2'
 cmd-3 = 'workspace 3'
@@ -51,6 +52,7 @@ cmd-7 = 'workspace 7'
 cmd-8 = 'workspace 8'
 cmd-9 = 'workspace 9'
 
+cmd-shift-0 = 'move-node-to-workspace 0'
 cmd-shift-1 = 'move-node-to-workspace 1'
 cmd-shift-2 = 'move-node-to-workspace 2'
 cmd-shift-3 = 'move-node-to-workspace 3'
@@ -65,7 +67,8 @@ cmd-shift-r = 'reload-config'
 cmd-r = 'mode resize'
 
 [workspace-to-monitor-force-assignment]
-1 = "secondary"
+0 = "secondary"
+1 = "main"
 2 = "main"
 3 = "main"
 4 = "main"
